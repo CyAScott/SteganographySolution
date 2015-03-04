@@ -5,6 +5,17 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteganographySolution", "SteganographySolution\SteganographySolution.csproj", "{AEAE99A5-5285-4DD7-8853-FEE016D99BED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteganographySolution.Common", "SteganographySolution.Common\SteganographySolution.Common.csproj", "{FE50946A-E7AD-4FDC-B1DB-AD299CA200E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteganographySolution.Tests", "SteganographySolution.Tests\SteganographySolution.Tests.csproj", "{8464EDDB-DA28-4B17-81A3-36B268A1BEAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{36FD3416-BFE7-4EEF-9DA3-4E5EBC29FB67}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +26,14 @@ Global
 		{AEAE99A5-5285-4DD7-8853-FEE016D99BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEAE99A5-5285-4DD7-8853-FEE016D99BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEAE99A5-5285-4DD7-8853-FEE016D99BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE50946A-E7AD-4FDC-B1DB-AD299CA200E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE50946A-E7AD-4FDC-B1DB-AD299CA200E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE50946A-E7AD-4FDC-B1DB-AD299CA200E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE50946A-E7AD-4FDC-B1DB-AD299CA200E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8464EDDB-DA28-4B17-81A3-36B268A1BEAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8464EDDB-DA28-4B17-81A3-36B268A1BEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8464EDDB-DA28-4B17-81A3-36B268A1BEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8464EDDB-DA28-4B17-81A3-36B268A1BEAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

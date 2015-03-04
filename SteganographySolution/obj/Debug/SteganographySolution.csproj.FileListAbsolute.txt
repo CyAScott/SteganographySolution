@@ -20,3 +20,5 @@ C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution\obj\Debug\SteganographySolution.exe
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution\obj\Debug\SteganographySolution.pdb
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution\bin\Debug\ffmpeg.exe
+C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution\bin\Debug\SteganographySolution.Common.dll
+C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution\bin\Debug\SteganographySolution.Common.pdb
