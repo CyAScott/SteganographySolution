@@ -87,11 +87,11 @@ namespace SteganographySolution.Tests
 
 				#region Encode Audio File
 				using (var reader = new MemoryStream(blob))
-					reader.SaveToFlacFile(blob.Length, new FileInfo(randomFlacFile), encodedFile);
+					reader.EmbedStreamIntoFlacFile(blob.Length, new FileInfo(randomFlacFile), encodedFile);
 				#endregion
 
 				#region Decode Audio File
-				(new FileInfo(encodedFile)).ExtractFileFromFlacFile(decodedFile);
+				(new FileInfo(encodedFile)).ExtractFileFromMediaFile(decodedFile);
 				var decodedBlob = File.ReadAllBytes(decodedFile);
 				#endregion
 

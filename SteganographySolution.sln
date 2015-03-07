@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{36FD34
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteganographySolution.UI", "SteganographySolution.UI\SteganographySolution.UI.csproj", "{ED3928E5-FC8A-4DEC-BBC3-E5765A953F68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{8464EDDB-DA28-4B17-81A3-36B268A1BEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8464EDDB-DA28-4B17-81A3-36B268A1BEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8464EDDB-DA28-4B17-81A3-36B268A1BEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3928E5-FC8A-4DEC-BBC3-E5765A953F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3928E5-FC8A-4DEC-BBC3-E5765A953F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED3928E5-FC8A-4DEC-BBC3-E5765A953F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3928E5-FC8A-4DEC-BBC3-E5765A953F68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
