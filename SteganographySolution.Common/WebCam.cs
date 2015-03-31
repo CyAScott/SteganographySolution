@@ -13,7 +13,7 @@ namespace SteganographySolution.Common
 		/// <param name="videoLength">The length of the video to record.</param>
 		/// <param name="outputLocation">The save location for the video.</param>
 		/// <returns></returns>
-		public async Task RecordVideo(string deviceName, TimeSpan videoLength, string outputLocation)
+		public static async Task RecordVideo(string deviceName, TimeSpan videoLength, string outputLocation)
 		{
 			await Task.Factory.StartNew(() =>
 			{
@@ -26,7 +26,7 @@ namespace SteganographySolution.Common
 		/// Gets the list of the web cams connected to the computer.
 		/// </summary>
 		/// <returns></returns>
-		public Task<string[]> GetAllWebcamDevices()
+		public static Task<string[]> GetAllWebcamDevices()
 		{
 			var returnValue = new TaskCompletionSource<string[]>();
 
