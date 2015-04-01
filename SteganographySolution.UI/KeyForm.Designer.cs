@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.keyText = new System.Windows.Forms.TextBox();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.nextBtn = new System.Windows.Forms.Button();
+            this.keyText = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,15 +55,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 65);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // keyText
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.keyText, 3);
-            this.keyText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.keyText.Location = new System.Drawing.Point(3, 3);
-            this.keyText.Name = "keyText";
-            this.keyText.Size = new System.Drawing.Size(522, 20);
-            this.keyText.TabIndex = 0;
-            // 
             // cancelBtn
             // 
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -85,6 +76,15 @@
             this.nextBtn.TabIndex = 2;
             this.nextBtn.Text = "Next";
             this.nextBtn.UseVisualStyleBackColor = true;
+            // 
+            // keyText
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.keyText, 3);
+            this.keyText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.keyText.Location = new System.Drawing.Point(3, 3);
+            this.keyText.Name = "keyText";
+            this.keyText.Size = new System.Drawing.Size(522, 20);
+            this.keyText.TabIndex = 0;
             // 
             // KeyForm
             // 

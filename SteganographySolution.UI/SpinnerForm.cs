@@ -16,5 +16,6 @@ namespace SteganographySolution.UI
         {
             InitializeComponent();
         }
+
     }
 }
