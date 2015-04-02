@@ -63,30 +63,62 @@ namespace SteganographySolution.Common
 		/// Gets the list of the web cams connected to the computer.
 		/// </summary>
 		/// <returns></returns>
-		public static Task<string[]> GetAllWebcamDevices()
+		public static Task<MediaDevices> GetAllWebcamDevices()
 		{
-			var returnValue = new TaskCompletionSource<string[]>();
+			var returnValue = new TaskCompletionSource<MediaDevices>();
 
 			Task.Factory.StartNew(() =>
 			{
-				var webcams = new List<string>();
+				var audioDevices = new List<string>();
+				var webCams = new List<string>();
 
 				try
 				{
-					//Todo: Get a list of all the connected webcams
-					
-					//Use ffmpeg to get the list of connected webcams
+					using (var ffmpeg = new Process())
+					{
+						//The parameters for the program to start
+						ffmpeg.StartInfo.Arguments = "-list_devices true -f dshow -i dummy";
+						ffmpeg.StartInfo.CreateNoWindow = true;
+						ffmpeg.StartInfo.FileName = "ffmpeg";
+						ffmpeg.StartInfo.UseShellExecute = false;
+						ffmpeg.StartInfo.RedirectStandardError = true;
+						ffmpeg.StartInfo.RedirectStandardInput = true;
+						ffmpeg.StartInfo.RedirectStandardOutput = true;
+						ffmpeg.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
-					//You can add a web cam to the list like:
-					//webcams.Add("USB Webcam");
+						//Start the program
+						ffmpeg.Start();
+
+						//Find the line "DirectShow video devices"
+						string line;
+						while (!(ffmpeg.StandardError.ReadLine() ?? "").Contains("DirectShow video devices")) ;
+
+						//Read Web Cams
+						while (!(line = ffmpeg.StandardError.ReadLine() ?? "").Contains("DirectShow audio devices"))
+							if (!line.Contains("Alternative name \"@"))
+								webCams.Add(line.Substring(line.IndexOf('"')).Trim('"'));
+
+						//Read Audio Devices
+						while (!(line = ffmpeg.StandardError.ReadLine() ?? "").Contains("dummy: Immediate exit requested"))
+							if (!line.Contains("Alternative name \"@"))
+								audioDevices.Add(line.Substring(line.IndexOf('"')).Trim('"'));
+
+						//Wait for the program to end
+						ffmpeg.WaitForExit(5000);
+
+						//If the program has not ended by now, kill the process
+						if (!ffmpeg.HasExited) ffmpeg.Kill();
+					}
+
+					returnValue.TrySetResult(new MediaDevices
+					{
+						AudioDevices = audioDevices.ToArray(),
+						WebCams = webCams.ToArray()
+					});
 				}
 				catch (Exception error)
 				{
 					returnValue.TrySetException(error);
-				}
-				finally
-				{
-					returnValue.TrySetResult(webcams.ToArray());
 				}
 			});
 
