@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Accord.Audio;
 using Accord.Audio.Formats;
@@ -29,6 +28,71 @@ namespace SteganographySolution.Common
 			}
 		}
 
+		/// <summary>
+		/// Reads the media file to find the duration of the file.
+		/// </summary>
+		/// <returns></returns>
+		public static Task<TimeSpan> GetMediaFileLenth(this FileInfo mediaFile)
+		{
+			var returnValue = new TaskCompletionSource<TimeSpan>();
+			ThreadPool.QueueUserWorkItem(state =>
+			{
+				try
+				{
+					using (var ffmpeg = new Process())
+					{
+						ffmpeg.StartInfo.Arguments = String.Format(
+							"-i \"{0}\"",
+							mediaFile.FullName);
+						ffmpeg.StartInfo.CreateNoWindow = true;
+						ffmpeg.StartInfo.FileName = "ffmpeg";
+						ffmpeg.StartInfo.RedirectStandardError = true;
+						ffmpeg.StartInfo.RedirectStandardOutput = true;
+						ffmpeg.StartInfo.UseShellExecute = false;
+						ffmpeg.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+
+						ffmpeg.Start();
+
+						var results = ffmpeg.StandardError.ReadToEnd();
+
+						ffmpeg.WaitForExit();
+
+						string line;
+						using (var reader = new StringReader(results))
+							while (reader.Peek() != -1 && !String.IsNullOrEmpty(line = reader.ReadLine()))
+								if (line.Contains("Duration:"))
+								{
+									var comma = line.IndexOf(',');
+									var colon = line.IndexOf(':');
+
+									if (colon == -1 || comma == -1 || comma < colon)
+										throw new InvalidOperationException("Unable to find the time for this file.");
+
+									var split = line
+										.Substring(colon + 1, comma - colon - 1)
+										.Split(':')
+										.Select(item => Convert.ToDouble(item.Trim()))
+										.ToArray();
+
+									returnValue.SetResult(TimeSpan.FromSeconds(
+										(split[0] * 3600) +
+										(split[1] * 60) +
+										split[2]));
+
+									return;
+								}
+
+					}
+					throw new InvalidOperationException("Unable to find the time for this file.");
+				}
+				catch (Exception error)
+				{
+					returnValue.TrySetException(error);
+				}
+			});
+
+			return returnValue.Task;
+		}
 		/// <summary>
 		/// Estimates the time of the audio track if this file was embedded in an media file.
 		/// </summary>

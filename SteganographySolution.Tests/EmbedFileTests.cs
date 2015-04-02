@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 using Accord.Audio;
 using Accord.Audio.Formats;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -113,6 +115,29 @@ namespace SteganographySolution.Tests
 			{
 				deleteFiles();
 			}
+		}
+
+		[TestMethod]
+		public void TestGetVideoLength()
+		{
+			var thread = new Thread((state) =>
+			{
+				MessageBox.Show("Find a video file.");
+
+				using (var dialog = new OpenFileDialog())
+				{
+					if (dialog.ShowDialog() != DialogResult.OK) return;
+
+					var task = (new FileInfo(dialog.FileName)).GetMediaFileLenth();
+
+					task.Wait();
+
+					MessageBox.Show(task.Result.ToString());
+				}
+			});
+			thread.TrySetApartmentState(ApartmentState.STA);
+			thread.Start();
+			thread.Join();
 		}
 	}
 }
