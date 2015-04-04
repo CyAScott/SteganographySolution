@@ -22,3 +22,28 @@ C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution\bin\Debug\ffmpeg.exe
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution\bin\Debug\SteganographySolution.Common.dll
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution\bin\Debug\SteganographySolution.Common.pdb
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\SteganographySolution.exe.config
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\obj\Debug\SteganographySolution.exe
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\obj\Debug\SteganographySolution.pdb
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\ffmpeg.exe
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\SteganographySolution.exe
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\SteganographySolution.pdb
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\Accord.Audio.dll
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\Accord.Audio.Formats.dll
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\Accord.dll
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\Accord.Math.dll
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\AForge.dll
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\AForge.Math.dll
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\SharpDX.dll
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\SteganographySolution.Common.dll
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\SteganographySolution.Common.pdb
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\Accord.xml
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\Accord.Audio.xml
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\Accord.Audio.Formats.xml
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\Accord.Math.xml
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\AForge.xml
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\AForge.Math.xml
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\SharpDX.xml
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\obj\Debug\SteganographySolution.csprojResolveAssemblyReference.cache
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\AForge.Video.dll
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution\bin\Debug\AForge.Video.xml

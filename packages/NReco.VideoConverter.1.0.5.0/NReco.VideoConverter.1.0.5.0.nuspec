@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NReco.VideoConverter</id>
+    <version>1.0.5.0</version>
+    <title>NReco.VideoConverter</title>
+    <authors>Vitalii Fedorchenko</authors>
+    <owners>Vitalii Fedorchenko</owners>
+    <licenseUrl>http://www.nrecosite.com/video_converter_net.aspx</licenseUrl>
+    <projectUrl>http://www.nrecosite.com/video_converter_net.aspx</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Video converter component for C# (.NET) based on FFMpeg utility. Can be used for converting video, transcoding live streams, extracting video thumbnails.</description>
+    <releaseNotes>v.1.0.5 changes: upgrade FFMpeg to v.2.5 (build Jan 21 2015), added correct handling of ConvertProgress event for ConcatMedia method, added ExecutionTimeout property (stop conversion process if the timeout expires; useful in some cases to prevent server overload)</releaseNotes>
+    <copyright>Copyright 2013-2014 Vitalii Fedorchenko</copyright>
+    <tags>Video FFMpeg</tags>
+    <references>
+      <reference file="NReco.VideoConverter.dll" />
+    </references>
+  </metadata>
+</package>

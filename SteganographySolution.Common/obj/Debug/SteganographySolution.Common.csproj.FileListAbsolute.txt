@@ -18,3 +18,6 @@ C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.Common\bin\Debug\SharpDX.xml
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.Common\obj\Debug\SteganographySolution.Common.dll
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.Common\obj\Debug\SteganographySolution.Common.pdb
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution.Common\obj\Debug\SteganographySolution.Common.csprojResolveAssemblyReference.cache
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution.Common\obj\Debug\SteganographySolution.Common.dll
+C:\Users\Ised\Desktop\USF\Spring2015\Computational Geometry\FinalProject\SteganographySolution\SteganographySolution.Common\obj\Debug\SteganographySolution.Common.pdb

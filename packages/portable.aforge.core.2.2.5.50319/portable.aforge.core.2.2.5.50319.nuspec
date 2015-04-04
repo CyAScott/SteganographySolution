@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>portable.aforge.core</id>
+    <version>2.2.5.50319</version>
+    <title>Portable AForge Core</title>
+    <authors>Andrew Kirillow,  Anders Gustafsson,  Cureos AB</authors>
+    <owners>Andrew Kirillow,  Anders Gustafsson,  Cureos AB</owners>
+    <licenseUrl>https://www.gnu.org/licenses/lgpl.html#content</licenseUrl>
+    <projectUrl>https://github.com/cureos/aforge</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/cureos/aforge/master/Setup/Portable/NuGet/portable-aforge.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Portable AForge Core contains the core types for the AForge.NET Framework on mobile and tablet devices.</description>
+    <summary>Core types for Portable AForge.NET Framework</summary>
+    <releaseNotes>BREAKING CHANGES!
+-----------------
+* Windows Phone 8/8.1 Silverlight no longer supported. Use Portable AForge.Core 2.2.5.50205 or earlier for WP 8/8.1 Silverlight support.
+* AForge.Math.Complex deprecated. Use System.Numerics.Complex instead.</releaseNotes>
+    <copyright>(c) 2006-2013 Andrew Kirillow, 2013-2015 Anders Gustafsson, Cureos AB</copyright>
+    <language>en-US</language>
+    <tags>aforge.net PCL .NET WPF WPA81 Windows8.1 Xamarin.iOS Xamarin.Android</tags>
+    <dependencies>
+      <dependency id="shim" version="1.0.1.50318" />
+    </dependencies>
+    <references>
+      <reference file="AForge.dll" />
+    </references>
+  </metadata>
+</package>
