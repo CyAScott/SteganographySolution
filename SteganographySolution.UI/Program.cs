@@ -93,13 +93,25 @@ namespace SteganographySolution.UI
 
                 var result = await WebCam.GetAllWebcamDevices();
 
-                if (result.Length == 0)
-                    throw new ArgumentException("No web cams found.");
+                if (result.AudioDevices.Length == 0)
+                    throw new ArgumentException("No audio devices found.");
 
-                var temp = Path.GetTempFileName();
+				if (result.WebCams.Length == 0)
+					throw new ArgumentException("No web cams found.");
 
-                await WebCam.RecordVideo("WebCam Selected", tSpan, temp);
-                GenerateKey(fileIn, new FileInfo(temp), tSpan);
+				using (var dialog = new ChooseWebCamForm(result))
+				{
+					if (dialog.ShowDialog() != DialogResult.OK) return;
+
+					var temp = Path.GetTempFileName();
+
+					await WebCam.RecordVideo(
+						dialog.webCamComboBox.SelectedItem as string, 
+						dialog.audioDeivceComboBox.SelectedItem as string,
+						tSpan, temp);
+
+					GenerateKey(fileIn, new FileInfo(temp), tSpan);
+				}
             }
             catch(Exception error){
                 if(MessageBox.Show(error.Message, "Error Occurred", 
@@ -118,7 +130,6 @@ namespace SteganographySolution.UI
 
 
 
-        }
-            
+        }   
 	}
 }
