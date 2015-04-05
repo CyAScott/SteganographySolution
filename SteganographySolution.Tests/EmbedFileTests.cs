@@ -50,13 +50,16 @@ namespace SteganographySolution.Tests
 					blob[b] = (byte)b;
 
 				//var blob = new byte[UInt16.MaxValue];
-				//var rnd = new Random();
+				var rnd = new Random();
 				//rnd.NextBytes(blob);
 				#endregion
 
 				#region Create Random Stereo Flac Track for Mixing
 				var randomFloatWav = new float[(blob.Length + 4) * 2 + 44100];
 				var randomShortWav = new short[randomFloatWav.Length];
+
+				for (var index = 0; index < randomShortWav.Length; index++)
+					randomShortWav[index] = (short)rnd.Next(short.MinValue, short.MaxValue);
 
 				#region Create Wav File
 				using (var writer = File.OpenWrite(randomWavFile))
@@ -89,11 +92,11 @@ namespace SteganographySolution.Tests
 
 				#region Encode Audio File
 				using (var reader = new MemoryStream(blob))
-					reader.EmbedStreamIntoFlacFile(blob.Length, new FileInfo(randomFlacFile), encodedFile);
+					reader.EmbedStreamIntoFlacFile(blob.Length, new FileInfo(randomFlacFile), encodedFile).Wait();
 				#endregion
 
 				#region Decode Audio File
-				(new FileInfo(encodedFile)).ExtractFileFromMediaFile(decodedFile);
+				(new FileInfo(encodedFile)).ExtractFileFromMediaFile(decodedFile).Wait();
 				var decodedBlob = File.ReadAllBytes(decodedFile);
 				#endregion
 
