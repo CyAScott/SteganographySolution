@@ -23,3 +23,6 @@ C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.UI\bin\Debug\SharpDX.xml
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.UI\obj\Debug\SteganographySolution.UI.exe
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.UI\obj\Debug\SteganographySolution.UI.pdb
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.UI\bin\Debug\SteganographySolution.UI.exe.config
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.UI\obj\Debug\SteganographySolution.UI.exe
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.UI\obj\Debug\SteganographySolution.UI.pdb

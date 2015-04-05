@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="EmbbedFile.cs" />
     <Compile Include="Encryption.cs" />
+    <Compile Include="MediaDevices.cs" />
     <Compile Include="MergeMedia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebCam.cs" />

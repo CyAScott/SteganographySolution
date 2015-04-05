@@ -18,3 +18,24 @@ C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.Common\bin\Debug\SharpDX.xml
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.Common\obj\Debug\SteganographySolution.Common.dll
 C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.Common\obj\Debug\SteganographySolution.Common.pdb
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\ffmpeg.exe
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\SteganographySolution.Common.dll.config
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\SteganographySolution.Common.dll
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\SteganographySolution.Common.pdb
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\Accord.Audio.dll
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\Accord.Audio.Formats.dll
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\Accord.dll
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\Accord.Math.dll
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\AForge.dll
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\AForge.Math.dll
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\SharpDX.dll
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\Accord.xml
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\Accord.Audio.xml
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\Accord.Audio.Formats.xml
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\Accord.Math.xml
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\AForge.xml
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\AForge.Math.xml
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\bin\Debug\SharpDX.xml
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\obj\Debug\SteganographySolution.Common.csprojResolveAssemblyReference.cache
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\obj\Debug\SteganographySolution.Common.dll
+C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.Common\obj\Debug\SteganographySolution.Common.pdb

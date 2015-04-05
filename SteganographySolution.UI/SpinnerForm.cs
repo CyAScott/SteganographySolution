@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace SteganographySolution.UI
 {
-	public partial class ChooseForm : Form
-	{
-		public ChooseForm()
-		{
-			InitializeComponent();
-		}
-	}
+    public partial class SpinnerForm : Form
+    {
+        public SpinnerForm()
+        {
+            InitializeComponent();
+        }
+
+    }
 }
