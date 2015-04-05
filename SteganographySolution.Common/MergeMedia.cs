@@ -12,16 +12,16 @@ namespace SteganographySolution.Common
 		/// </summary>
 		/// <param name="videoFile">The target video file.</param>
 		/// <param name="flacAudioFile">The source audio track.</param>
-		public static async Task ReplaceAudioTrackWithFlacFile(this FileInfo videoFile, FileInfo flacAudioFile)
+		/// <param name="output">The save to location for the new video file.</param>
+		public static async Task ReplaceAudioTrackWithFlacFile(this FileInfo videoFile, FileInfo flacAudioFile, string output)
 		{
 			await Task.Factory.StartNew(() =>
 			{
 				using (var ffmpeg = new Process())
 				{
 					ffmpeg.StartInfo.Arguments = String.Format(
-						//Todo: use ffmpeg to replace the audio track in a target video file
-						"-i \"{0}\" PUT YOUR ARGUMENTS FOR FFMPEG HERE",
-						flacAudioFile.FullName);
+						"-i \"{0}\" -i \"{1}\" -c:v copy -c:a aac -strict experimental -map 0:v:0 -map 1:a:0 \"{2}\"",
+						videoFile.FullName, flacAudioFile.FullName, output);
 					ffmpeg.StartInfo.FileName = "ffmpeg";
 					ffmpeg.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
