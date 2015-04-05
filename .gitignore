@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.sln.docstates
+*.cache
 
 #js package manager
 **/node_modules
