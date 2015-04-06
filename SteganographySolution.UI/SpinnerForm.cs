@@ -12,9 +12,15 @@ namespace SteganographySolution.UI
 {
     public partial class SpinnerForm : Form
     {
+       
         public SpinnerForm()
         {
             InitializeComponent();
+        }
+
+        public void outTextBoxSet(string text)
+        {
+            outTextBox.AppendText(text);
         }
 
     }

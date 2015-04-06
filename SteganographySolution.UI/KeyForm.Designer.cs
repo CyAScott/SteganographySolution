@@ -52,16 +52,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 65);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(526, 59);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // cancelBtn
             // 
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cancelBtn.Location = new System.Drawing.Point(331, 33);
+            this.cancelBtn.Location = new System.Drawing.Point(329, 33);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(94, 29);
+            this.cancelBtn.Size = new System.Drawing.Size(94, 24);
             this.cancelBtn.TabIndex = 1;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -70,12 +70,13 @@
             // 
             this.nextBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.nextBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nextBtn.Location = new System.Drawing.Point(431, 33);
+            this.nextBtn.Location = new System.Drawing.Point(429, 33);
             this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(94, 29);
+            this.nextBtn.Size = new System.Drawing.Size(94, 24);
             this.nextBtn.TabIndex = 2;
             this.nextBtn.Text = "Next";
             this.nextBtn.UseVisualStyleBackColor = true;
+            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
             // 
             // keyText
             // 
@@ -83,14 +84,14 @@
             this.keyText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keyText.Location = new System.Drawing.Point(3, 3);
             this.keyText.Name = "keyText";
-            this.keyText.Size = new System.Drawing.Size(522, 20);
+            this.keyText.Size = new System.Drawing.Size(520, 20);
             this.keyText.TabIndex = 0;
             // 
             // KeyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 65);
+            this.ClientSize = new System.Drawing.Size(526, 59);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "KeyForm";
