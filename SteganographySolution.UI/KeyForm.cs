@@ -27,16 +27,14 @@ namespace SteganographySolution.UI
                 byte[] temp = Encryption.ConvertFromBase64(this.keyText.Text);
                 byte[] genKey = Encryption.GenerateKey();
 
-                if (temp.Length != genKey.Length)
-                {
-                    MessageBox.Show("Invalid key, check the key length and try again.");
-                    return;
-                }
+				if (temp.Length != genKey.Length)
+					throw new Exception("Invalid key length.");
                 
                 this.key = temp;
             }
-            catch (Exception) 
-            {
+            catch (Exception error)
+			{
+				MessageBox.Show(error.Message, "Invalid Key", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }

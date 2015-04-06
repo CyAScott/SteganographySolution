@@ -65,7 +65,9 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChooseWebCamForm.cs" />
+    <Compile Include="ChooseWebCamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ChooseWebCamForm.Designer.cs">
       <DependentUpon>ChooseWebCamForm.cs</DependentUpon>
     </Compile>

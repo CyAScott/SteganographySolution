@@ -29,6 +29,7 @@ namespace SteganographySolution.Common
 			Buffer.BlockCopy(keyData, iv.Length, key, 0, key.Length);
 			algorithm.Key = key;
 			algorithm.IV = iv;
+			algorithm.Padding = PaddingMode.PKCS7;
 
 			return algorithm;
 		}
@@ -41,15 +42,20 @@ namespace SteganographySolution.Common
 		/// <param name="saveToStream">The export stream.</param>
 		/// <param name="keyData">The key to decrypt the source stream.</param>
 		/// <returns></returns>
-		public static async Task DecryptStream(this Stream stream, Stream saveToStream, byte[] keyData)
+		public static Task DecryptStream(this Stream stream, Stream saveToStream, byte[] keyData)
 		{
 			if (saveToStream == null) throw new ArgumentNullException("saveToStream");
 			if (stream == null) throw new ArgumentNullException("stream");
 
-			using (var algorithm = newEncryptionAlgorithm(keyData))
-			using (var decryptor = algorithm.CreateDecryptor())
-			using (var crypto = new CryptoStream(stream, decryptor, CryptoStreamMode.Read))
-				await crypto.CopyToAsync(saveToStream);
+			return Task.Factory.StartNew(() =>
+			{
+				using (var algorithm = newEncryptionAlgorithm(keyData))
+				using (var decryptor = algorithm.CreateDecryptor())
+				using (var crypto = new CryptoStream(stream, decryptor, CryptoStreamMode.Read))
+					crypto.CopyTo(saveToStream);
+			});
+
+			//return stream.CopyToAsync(saveToStream);
 		}
 		/// <summary>
 		/// Encrypts a blob or stream.
@@ -58,15 +64,19 @@ namespace SteganographySolution.Common
 		/// <param name="saveToStream">The export stream.</param>
 		/// <param name="keyData">The key to encrypt the source stream.</param>
 		/// <returns></returns>
-		public static async Task EncryptStream(this Stream stream, Stream saveToStream, byte[] keyData)
+		public static Task EncryptStream(this Stream stream, Stream saveToStream, byte[] keyData)
 		{
 			if (saveToStream == null) throw new ArgumentNullException("saveToStream");
 			if (stream == null) throw new ArgumentNullException("stream");
 
-			using (var algorithm = newEncryptionAlgorithm(keyData))
-			using (var encryptor = algorithm.CreateEncryptor())
-			using (var crypto = new CryptoStream(saveToStream, encryptor, CryptoStreamMode.Write))
-				await stream.CopyToAsync(crypto);
+			return Task.Factory.StartNew(() =>
+			{
+				using (var algorithm = newEncryptionAlgorithm(keyData))
+				using (var encryptor = algorithm.CreateEncryptor())
+				using (var crypto = new CryptoStream(saveToStream, encryptor, CryptoStreamMode.Write))
+					stream.CopyTo(crypto);
+			});
+			//return stream.CopyToAsync(saveToStream);
 		}
 		/// <summary>
 		/// Convert a base64 encoded string into a byte array.

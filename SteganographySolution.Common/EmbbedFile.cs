@@ -110,7 +110,7 @@ namespace SteganographySolution.Common
 		/// <param name="mixInThisAudioOrVideoFile">This file will be mixed into the otput flac file.</param>
 		/// <param name="saveFlacAudioFileLocation">The output flac file location.</param>
 		/// <returns></returns>
-		public static async Task EmbedStreamIntoFlacFile(this Stream blobStream, int blobLength, FileInfo mixInThisAudioOrVideoFile, string saveFlacAudioFileLocation)
+		public static Task EmbedStreamIntoFlacFile(this Stream blobStream, int blobLength, FileInfo mixInThisAudioOrVideoFile, string saveFlacAudioFileLocation)
 		{
 			if (blobLength <= 0) throw new IndexOutOfRangeException("blobLength");
 			if (blobStream == null) throw new ArgumentNullException("blobStream");
@@ -121,7 +121,7 @@ namespace SteganographySolution.Common
 			var tempSourceWavLocation = Path.Combine(Path.GetTempPath(), Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".wav");
 			var tempTargetWavLocation = Path.Combine(Path.GetTempPath(), Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".wav");
 
-			await Task.Factory.StartNew(() =>
+			return Task.Factory.StartNew(() =>
 			{
 				#region Convert Source Audio to Wav
 				using (var ffmpeg = new Process())
@@ -304,7 +304,7 @@ namespace SteganographySolution.Common
 		/// <param name="mediaFile">The media file can be either a video or audio file.</param>
 		/// <param name="saveToLocation">The export location for the extracted file.</param>
 		/// <returns></returns>
-		public static async Task ExtractFileFromMediaFile(this FileInfo mediaFile, string saveToLocation)
+		public static Task ExtractFileFromMediaFile(this FileInfo mediaFile, string saveToLocation)
 		{
 			if (mediaFile == null) throw new ArgumentNullException("audioOrVideoFile");
 			if (!File.Exists(mediaFile.FullName)) throw new FileNotFoundException("audioOrVideoFile");
@@ -313,7 +313,7 @@ namespace SteganographySolution.Common
 
 			var tempSourceWavLocation = Path.Combine(Path.GetTempPath(), Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".wav");
 
-			await Task.Factory.StartNew(() =>
+			return Task.Factory.StartNew(() =>
 			{
 				try
 				{

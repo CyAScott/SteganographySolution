@@ -20,7 +20,7 @@ namespace SteganographySolution.UI
 
         public void outTextBoxSet(string text)
         {
-            outTextBox.AppendText(text);
+			Invoke(new Action<string>(outTextBox.AppendText), text);
         }
 
     }

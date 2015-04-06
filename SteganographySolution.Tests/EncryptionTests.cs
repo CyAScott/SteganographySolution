@@ -2,6 +2,7 @@
 using System.IO;
 using SteganographySolution.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SharpDX.Text;
 
 namespace SteganographySolution.Tests
 {
@@ -15,14 +16,14 @@ namespace SteganographySolution.Tests
 			var exception = new InvalidProgramException("It didn't work.");
 			var key = Encryption.GenerateKey();
 			var rnd = new Random();
-			var unencryptedBlob = new byte[UInt16.MaxValue];
-
-			rnd.NextBytes(unencryptedBlob);
+			//var unencryptedBlob = new byte[UInt16.MaxValue - 3];
+			var unencryptedBlob = ASCIIEncoding.UTF8.GetBytes("Hello World");
+			//rnd.NextBytes(unencryptedBlob);
 
 			using (var readStream = new MemoryStream(unencryptedBlob))
 			using (var writeStream = new MemoryStream())
 			{
-				readStream.EncryptStream(writeStream, key);
+				readStream.EncryptStream(writeStream, key).Wait();
 
 				encryptedBlob = writeStream.ToArray();
 			}
@@ -30,7 +31,7 @@ namespace SteganographySolution.Tests
 			using (var readStream = new MemoryStream(encryptedBlob))
 			using (var writeStream = new MemoryStream())
 			{
-				readStream.DecryptStream(writeStream, key);
+				readStream.DecryptStream(writeStream, key).Wait();
 
 				decryptedBlob = writeStream.ToArray();
 			}
