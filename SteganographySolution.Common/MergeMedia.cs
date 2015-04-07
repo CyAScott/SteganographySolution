@@ -17,6 +17,7 @@ namespace SteganographySolution.Common
 		{
 			return Task.Factory.StartNew(() =>
 			{
+				if (File.Exists(output)) File.Delete(output);
 				using (var ffmpeg = new Process())
 				{
 					ffmpeg.StartInfo.Arguments = String.Format(

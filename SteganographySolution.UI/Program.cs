@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SharpDX.Text;
 using SteganographySolution.Common;
 
 namespace SteganographySolution.UI
@@ -87,21 +85,18 @@ namespace SteganographySolution.UI
 
 		public static async Task Start()
 		{
-			if (MessageBox.Show("Would you like to Encrypt, click yes else cick no to Decrypt. ",
-				"Encrypt or Decrypt",
+			if (MessageBox.Show("If you would like to embed a file into a video click yes " +
+				"else cick no to extract a file from a video.",
+				"Embed or Extract",
 				MessageBoxButtons.YesNo,
 				MessageBoxIcon.Question) == DialogResult.Yes)
 				await Encrypt();
 			else
 				await Decrypt();
-			//form.UIDispose();
 		}
-		public static async Task Restart()
+		public static void End()
 		{
-			if (MessageBox.Show("Do you want to quit this process?", "Shut Down Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-				form.UIDispose();
-			else
-				await Start();
+			form.UIDispose();
 		}
         public static async Task Decrypt()
         {
@@ -148,7 +143,7 @@ namespace SteganographySolution.UI
 							spinForm.UIDispose();
 				        }
 
-						await Restart();
+						End();
 					}
 			        finally
 			        {
@@ -177,7 +172,7 @@ namespace SteganographySolution.UI
 
 		        var time = file.EstimateAudioTrackLength();
 
-		        MessageBox.Show("Estimated needs to be greater than or equal to: " + time);
+		        MessageBox.Show("Estimated length of the video needs to be greater than or equal to: " + time, "Video Length", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 		        var chooseOption = New<ChooseForm>();
 		        try
@@ -207,7 +202,7 @@ namespace SteganographySolution.UI
 
 	        try
 	        {
-				chooseFile.SetTitleAndFilter("Video Files (*.mp4)|*.mp4", "Video File to Ebed File In");
+				chooseFile.SetTitleAndFilter("Video Files (*.mp4)|*.mp4", "Video File to Embed File In");
 		        if (chooseFile.GetDialogResults() != DialogResult.OK) return;
 
 		        var chosenFile = new FileInfo(chooseFile.FileName);
@@ -215,8 +210,11 @@ namespace SteganographySolution.UI
 
 		        if (chosenFileLength.Result >= tSpan)
 			        await ExportVideo(fileIn, chosenFile);
-		        else
-			        await FindMovie(fileIn, tSpan);
+				else
+		        {
+			        MessageBox.Show("The video was not long enough.", "Video Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					await FindMovie(fileIn, tSpan);
+		        }
 	        }
 	        finally
 	        {
@@ -228,7 +226,7 @@ namespace SteganographySolution.UI
 	        try
 	        {
 		        var result = await WebCam.GetAllWebcamDevices();
-		        var temp = Path.GetTempFileName();
+		        var temp = Path.Combine(Path.GetTempPath(), Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".avi");
 
 		        if (result.AudioDevices.Length == 0)
 			        throw new ArgumentException("No audio devices found.");
@@ -279,7 +277,6 @@ namespace SteganographySolution.UI
 				spinWait.outTextBoxSet("Encrypting the file...\n");
 
 				using (var inStream = fileIn.OpenRead())
-				//using (var inStream = new MemoryStream(ASCIIEncoding.UTF8.GetBytes("Hello World")))
 				using (var encryptedStream = File.Create(encryptedFile))
 					await Encryption.EncryptStream(inStream, encryptedStream, key);
 
@@ -297,28 +294,29 @@ namespace SteganographySolution.UI
 
 				try
 				{
-					saveFile.SetTitleAndFilter("Video Files (*.avi)|*.avi", "Export File");
+					saveFile.SetTitleAndFilter("Video Files (*.avi)|*.avi", "Export Video");
 					if (saveFile.GetDialogResults() != DialogResult.OK) return;
 
 					await videoFile.ReplaceAudioTrackWithFlacFile(new FileInfo(flacFile), saveFile.FileName);
 
-					spinWait.outTextBoxSet("File Embed Complete.\n");
-
-					form.Invoke(new Action<string>(Clipboard.SetText), key.ConvertToBase64());
-
-					MessageBox.Show("Your encryption key was put in the clipboard.");
 				}
 				finally
 				{
 					saveFile.UIDispose();
 				}
+
+				spinWait.outTextBoxSet("File Embed Complete.\n");
+
+				form.Invoke(new Action<string>(Clipboard.SetText), key.ConvertToBase64());
+
+				MessageBox.Show("Your encryption key was put in the clipboard.", "File Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 			finally
 			{
 				spinWait.UIDispose();
 			}
 
-			await Restart();
+			End();
 		}
 	}
 }
