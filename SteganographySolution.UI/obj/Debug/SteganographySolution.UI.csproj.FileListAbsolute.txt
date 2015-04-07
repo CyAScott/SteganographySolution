@@ -51,3 +51,6 @@ C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.UI\obj\Debug\S
 C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.UI\obj\Debug\SteganographySolution.UI.Properties.Resources.resources
 C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.UI\obj\Debug\SteganographySolution.UI.SpinnerForm.resources
 C:\Users\Bdon\Desktop\SteganographySolution\SteganographySolution.UI\obj\Debug\SteganographySolution.UI.csproj.GenerateResource.Cache
+C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.UI\obj\Debug\SteganographySolution.UI.ChooseWebCamForm.resources
+C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.UI\obj\Debug\SteganographySolution.UI.KeyForm.resources
+C:\Users\Cy\OneDrive\Documents\School\CIS 4364-901 Cryptology and Info Security\SteganographySolution\SteganographySolution.UI\obj\Debug\SteganographySolution.UI.SpinnerForm.resources
